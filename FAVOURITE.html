@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Team - Real Madrid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #dad11f36; /* Specify the background color you want */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Favorite Team - Real Madrid</h1>
+
+    <table id="myTable">
+        <thead>
+            <tr id="headerRow"></tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script>
+        // Define column names and row data
+        const columnNames = ['Name', 'Age', 'Appearance', 'Goals'];
+        const rowData = [];
+
+        // Create table header with column names
+        const headerRow = document.getElementById('headerRow');
+        columnNames.forEach(column => {
+            const th = document.createElement('th');
+            th.textContent = column;
+            headerRow.appendChild(th);
+        });
+
+        // Create 20 rows with input fields for row data
+        const tableBody = document.getElementById('tableBody');
+        for (let i = 0; i < 20; i++) {
+            const tr = document.createElement('tr');
+            for (let j = 0; j < columnNames.length; j++) {
+                const td = document.createElement('td');
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.placeholder = `Enter data for Row ${i + 1}, ${columnNames[j]}`;
+                input.addEventListener('input', (event) => {
+                    rowData[i] = rowData[i] || {};
+                    rowData[i][columnNames[j]] = event.target.value;
+                });
+                td.appendChild(input);
+                tr.appendChild(td);
+            }
+            tableBody.appendChild(tr);
+        }
+
+        console.log("Table structure created. Column names and row data can be inputted dynamically.");
+    </script>
+
+</body>
+</html>
