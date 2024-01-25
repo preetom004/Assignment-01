@@ -23,7 +23,27 @@
         }
 
         th {
-            background-color: #dad11f36; /* Specify the background color you want */
+            background-color: #dad11f36;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .save-button {
+            margin-top: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            /* Adjust styles for smaller screens */
+            th, td {
+                font-size: 14px;
+            }
+
+            .save-button {
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
@@ -37,6 +57,8 @@
         </thead>
         <tbody id="tableBody"></tbody>
     </table>
+
+    <button class="btn btn-primary save-button" onclick="saveData()">Save Data</button>
 
     <script>
         // Define column names and row data
@@ -68,6 +90,11 @@
                 tr.appendChild(td);
             }
             tableBody.appendChild(tr);
+        }
+
+        function saveData() {
+            console.log('Data saved:', rowData);
+            // You can implement your logic here to save data (e.g., send it to a server).
         }
 
         console.log("Table structure created. Column names and row data can be inputted dynamically.");
