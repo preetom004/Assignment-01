@@ -4,52 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mr Satyaki - Personal Information</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             text-align: center;
             max-width: 1200px;
-            background-color: #dad11f36; /* Specify the background color you want */
+            background-color: #dad11f36;
         }
 
         h1 {
             color: #333;
         }
 
-        p {
-            margin-bottom: 10px;
-        }
         #myHeader {
-  background-color: rgb(19, 183, 90);
-  color: black;
-  padding: 40px;
-  text-align: center;
-  }
-  .info {
-  background-color: lightblue;
-  color: black;
-  padding: 10px;
-}
+            background-color: rgb(19, 183, 90);
+            color: black;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .info {
+            background-color: lightblue;
+            color: black;
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+
+            #myHeader {
+                padding: 20px;
+            }
+
+            .info {
+                padding: 8px;
+            }
+        }
+
+        // SCSS styles
+        $primary-color: rgb(19, 183, 90);
+        $background-color: #dad11f36;
+
+        body {
+            background-color: $background-color;
+            margin: 20px;
+            max-width: 1200px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+
+            @media screen and (max-width: 600px) {
+                margin: 10px;
+            }
+        }
+
+        #myHeader {
+            background-color: $primary-color;
+            color: black;
+            padding: 40px;
+            text-align: center;
+
+            @media screen and (max-width: 600px) {
+                padding: 20px;
+            }
+        }
+
+        .info {
+            background-color: lightblue;
+            color: black;
+            padding: 10px;
+
+            @media screen and (max-width: 600px) {
+                padding: 8px;
+            }
+        }
+
+        // Bootstrap-styled button hyperlink
+        .btn-custom {
+            @extend .btn;
+            @extend .btn-primary;
+        }
+
+        // Individual page links
+        a.btn-custom {
+            display: block;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-    <h1 id="myHeader">Mr Satyaki - Personal Information</h1>
+    <h1 id="myHeader">Personal Information</h1>
 
-    <p class="info"><strong> Name: Mr Satyki</p>
+    <p class="info"><strong>Name:</strong> Mr Satyaki Mozumder</p>
     <p class="info"><strong>Occupation:</strong> Computer Engineer</p>
     <p class="info"><strong>Location:</strong> Canada</p>
     <p class="info"><strong>Work Experience:</strong> 8 years in the IT industry</p>
     <p class="info"><strong>Current Pursuit:</strong> Master of Engineering (MENG) in Geomatics Engineering at the University of Calgary</p>
     <p class="info"><strong>Hobby:</strong> Football play and Watch</p>
     <p class="info"><strong>Favourite Team:</strong> Real Madrid</p>
-    <p><a href="My Football Blog.html">European Football Structure</a><p>
-    <p><a href="FAVOURITE.html">Real Madrid fan page</a></p>
-    <p><a href="Photos.html">Calgary Photos</a><p>
+
+    <!-- Bootstrap-styled button hyperlinks -->
+    <p><a href="My Football Blog.html" class="btn btn-primary btn-custom">European Football Structure</a></p>
+    <p><a href="FAVOURITE.html" class="btn btn-secondary btn-custom">Real Madrid fan page</a></p>
+    <p><a href="Photos.html" class="btn btn-success btn-custom">Photos</a></p>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
     <script>
-
-        console.log("Hello, Mr X! Welcome to your personalized webpage.");
+        console.log("Hello, Mr Satyaki! Welcome to your personalized webpage.");
     </script>
-
 </body>
 </html>
